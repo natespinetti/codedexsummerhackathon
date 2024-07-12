@@ -5,8 +5,8 @@ import { Hits, InstantSearch, SearchBox, Configure } from "react-instantsearch";
 import { Hit } from "../components/Hit";
 
 const searchClient = algoliasearch(
-  "59235Y0Q1B",
-  "206b69ce93d991895114cfd7ac26f46c"
+  process.env.NEXT_PUBLIC_ALGOLIA_APP_ID || "",
+  process.env.NEXT_PUBLIC_ALGOLIA_API_KEY || ""
 );
 
 export const Search = () => {

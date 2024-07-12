@@ -18,7 +18,6 @@ export default function Home() {
       <HomeHero />
       {/* Step by step intro section */}
       <HowItWorks />
-      {/* Whats new and happening soon */}
       <Box
         bg="var(--chakra-colors-gray-50)"
         id="whats-happening"
@@ -167,7 +166,6 @@ export default function Home() {
           </Box>
         </Box>
       </Box>
-      {/* Specials callout and contact form */}
       <Specials />
     </>
   );

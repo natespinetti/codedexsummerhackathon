@@ -159,7 +159,6 @@ export default function About() {
           </Box>
         </Box>
       </Box>
-      {/* Contact form */}
       <Contact />
     </>
   );

@@ -145,7 +145,7 @@ export default function Footer() {
           </Box>
         </Container>
 
-        {/* Copyright/social footer */}
+        {/* Copyright footer */}
         <Box
           borderTopWidth={1}
           borderStyle={"solid"}

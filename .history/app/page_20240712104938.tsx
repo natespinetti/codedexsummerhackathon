@@ -167,7 +167,6 @@ export default function Home() {
           </Box>
         </Box>
       </Box>
-      {/* Specials callout and contact form */}
       <Specials />
     </>
   );

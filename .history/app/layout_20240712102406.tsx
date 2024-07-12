@@ -6,7 +6,6 @@ import "../public/global.css";
 
 import { Metadata } from "next";
 
-// Metadata for the app -- This was a pain to figure out in an App Router setup
 export const metadata: Metadata = {
   title: {
     template: "%s | Sip & Play",

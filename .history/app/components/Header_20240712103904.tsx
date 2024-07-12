@@ -61,7 +61,6 @@ export default function Header() {
             />
           </Flex>
           <Flex flex={{ base: 1 }} justify={{ base: "center", md: "start" }}>
-            {/* Logo left */}
             <Image
               maxW="70px"
               src="/logos/sipnplay2.png"
@@ -112,7 +111,6 @@ export default function Header() {
   );
 }
 
-// Desktop navigation with hoverable dropdowns
 const DesktopNav = () => {
   const linkColor = useColorModeValue("gray.600", "gray.200");
   const linkHoverColor = useColorModeValue("gray.800", "white");
@@ -171,7 +169,6 @@ const DesktopNav = () => {
   );
 };
 
-// Desktop subnav items (the hovers)
 const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
   return (
     <Box
@@ -210,7 +207,6 @@ const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
   );
 };
 
-// Mobile collapsed menu
 const MobileNav = ({ onToggled }: { onToggled: () => void }) => {
   return (
     <Stack
@@ -242,7 +238,6 @@ const MobileNav = ({ onToggled }: { onToggled: () => void }) => {
   );
 };
 
-// Mobile nav item with collapsible subnav
 const MobileNavItem = ({
   label,
   children,
@@ -317,7 +312,6 @@ interface NavItem {
   href?: string;
 }
 
-// All nav items
 const NAV_ITEMS: Array<NavItem> = [
   {
     label: "Home",

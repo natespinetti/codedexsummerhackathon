@@ -1,5 +1,5 @@
 "use client";
-import { Box, Text, keyframes } from "@chakra-ui/react";
+import { Box, Text, Button, keyframes } from "@chakra-ui/react";
 import CurrentDayHours from "./CurrentDaysHours";
 import { ArrowDownIcon } from "@chakra-ui/icons";
 
@@ -26,7 +26,6 @@ const upDownAnimation = keyframes`
   }
 `;
 
-// Generate bubbles for the background
 const bubbles = new Array(20).fill(0).map((_, index) => ({
   id: index,
   size: Math.random() * 3 + 1,
@@ -35,21 +34,14 @@ const bubbles = new Array(20).fill(0).map((_, index) => ({
   animationDelay: Math.random() * 100,
 }));
 
-interface HeroProps {
-  headline: string;
-  anchor: string;
-  sub?: string;
-  submenu?: boolean;
-}
-const Hero: React.FC<HeroProps> = ({ headline, anchor, sub, submenu }) => {
+export default function HomeHero() {
   return (
     <>
-      <Box position="relative" h="100%" w="100%">
+      <Box w="100%" h="100%" pos="relative">
         <Box
           position="relative"
           w="100vw"
           p="2.5rem"
-          pt={submenu ? "4rem" : "auto"}
           display="flex"
           flexDir="column"
           justifyItems="center"
@@ -65,25 +57,58 @@ const Hero: React.FC<HeroProps> = ({ headline, anchor, sub, submenu }) => {
             color="#243E36"
             textAlign="center"
           >
-            {headline}
+            <Text
+              as="span"
+              color="#95b878"
+              fontWeight="900"
+              fontFamily="heading"
+              fontSize={["2.5rem", "3rem"]}
+            >
+              Sip & Play:
+              <br />
+            </Text>
+            Your Ultimate Board Game Cafe
           </Text>
-          {/* Display hours everywhere */}
           <CurrentDayHours />
-          {sub && <Text>{sub}</Text>}
-          {/* Moving arrow */}
+          <Button
+            as={"a"}
+            display={{ base: "none", md: "inline-flex" }}
+            fontSize={"sm"}
+            fontWeight={600}
+            color={"white"}
+            bg={"pink.400"}
+            href={"https://www.exploretock.com/sipnplay/"}
+            target="_blank"
+            _hover={{
+              bg: "pink.300",
+            }}
+          >
+            Make a reservation
+          </Button>
+
+          <Text
+            fontSize="12px"
+            w={{ base: "100%", md: "30%" }}
+            textAlign="center"
+          >
+            For large parties (9+ or more people), please email us at{" "}
+            <Text as="a" href="mailto:sipnplaynyc@gmail.com">
+              sipnplaynyc@gmail.com
+            </Text>{" "}
+            to inquire about a reservation.
+          </Text>
           <Box
             as="a"
             bg="rgba(246, 232, 234, 0.5)"
             p=".5rem"
             borderRadius="50%"
-            href={`#${anchor}`}
+            href="#how-it-works"
             transition="0.3s ease-in-out"
             animation={`${upDownAnimation} 4s ease-in-out infinite`}
           >
             <ArrowDownIcon color="#243E36" fontSize="1.5rem" />
           </Box>
         </Box>
-        {/* Bubbles section */}
         <Box
           position="absolute"
           overflow="hidden"
@@ -116,6 +141,4 @@ const Hero: React.FC<HeroProps> = ({ headline, anchor, sub, submenu }) => {
       </Box>
     </>
   );
-};
-
-export default Hero;
+}

@@ -16,13 +16,11 @@ const openingHours: { [key: number]: string } = {
 export default function CurrentDayHours() {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
-  const currentDay = new Date().getDay(); // get day
-  const hours = openingHours[currentDay]; // select which hours to display based on day
+  const currentDay = new Date().getDay();
+  const hours = openingHours[currentDay];
   const linkColor = useColorModeValue("gray.600", "gray.200");
   const linkHoverColor = useColorModeValue("gray.800", "white");
   const popoverContentBgColor = useColorModeValue("white", "gray.800");
-
-  // handle open and close of popover
   const handleItemClick = () => {
     if (isOpen) {
       onClose();
@@ -30,7 +28,6 @@ export default function CurrentDayHours() {
       onOpen();
     }
   };
-
   return (
     <Box textAlign="center" fontSize="16px" zIndex="2" overflow="inherit">
       <Popover
@@ -51,7 +48,6 @@ export default function CurrentDayHours() {
               color: linkHoverColor,
             }}
           >
-            {/* This is whats displayed with no interaction */}
             <Box
               display="flex"
               flexDir="row"
@@ -78,7 +74,6 @@ export default function CurrentDayHours() {
           </Box>
         </PopoverTrigger>
 
-        {/* List all business hours in popover */}
         <PopoverContent
           border={0}
           boxShadow={"xl"}

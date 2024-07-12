@@ -22,15 +22,12 @@ export default function Menu() {
     }
   };
 
-  // Watch on scroll
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
   return (
     <>
-      {/* Menu page specific nav */}
       <MenuNav />
       <Hero
         headline={"Menu"}
@@ -49,7 +46,6 @@ export default function Menu() {
       >
         <Box maxW="90%" m="auto" p="3.5rem 0" minH="500px" w="100vw" zIndex="1">
           <Box w={["100%", "50%"]} m="auto">
-            {/* Menu sections */}
             <Box mb="3.5rem" id="coffee" scrollMarginTop="136px">
               <Box
                 display="flex"
@@ -770,7 +766,6 @@ export default function Menu() {
           </Box>
         </Box>
 
-        {/* Parallax 3D models */}
         <Box
           ref={parallaxRef}
           h="100%"
@@ -781,7 +776,7 @@ export default function Menu() {
           display={["none", "block"]}
         >
           <Box
-            data-speed="0.3"
+            data-speed="0.5"
             position="absolute"
             top="-12%"
             left="0%"

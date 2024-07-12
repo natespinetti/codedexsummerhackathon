@@ -15,7 +15,7 @@ import {
   Textarea,
   keyframes,
 } from "@chakra-ui/react";
-import { MdOutlineEmail } from "react-icons/md";
+import { MdPhone, MdEmail, MdLocationOn, MdOutlineEmail } from "react-icons/md";
 import { BsPerson } from "react-icons/bs";
 
 const bubbleAnimation = keyframes`
@@ -29,7 +29,6 @@ const bubbleAnimation = keyframes`
   }
 `;
 
-// Generate bubbles for the background
 const bubbles = new Array(20).fill(0).map((_, index) => ({
   id: index,
   size: Math.random() * 3 + 1,
@@ -37,8 +36,7 @@ const bubbles = new Array(20).fill(0).map((_, index) => ({
   animationDuration: Math.random() * 20 + 10,
   animationDelay: Math.random() * 100,
 }));
-
-export default function Specials() {
+export default function Contact() {
   return (
     <Container
       bg="white"
@@ -47,13 +45,12 @@ export default function Specials() {
       bgRepeat="no-repeat"
       maxW="full"
       pos="relative"
-      id="specials"
+      id="contact"
       scrollMarginTop="96px"
       mt={0}
       centerContent
       overflow="hidden"
     >
-      {/* Bubbles section */}
       {bubbles.map((bubble, index) => (
         <Box
           key={bubble.id}
@@ -78,7 +75,7 @@ export default function Specials() {
       <Flex zIndex="2" w="100%" justifyContent="center">
         <Box
           bg="#243E36"
-          w={["100%", "70%"]}
+          w={["100%", "60%"]}
           color="#94B973"
           borderRadius="lg"
           m={{ sm: 4, md: 16, lg: 10 }}
@@ -86,7 +83,6 @@ export default function Specials() {
         >
           <Box p={4}>
             <Box display="flex" flexDir={["column", "row"]} gridGap="4rem">
-              {/* Left column */}
               <Box>
                 <Box>
                   <Text
@@ -95,43 +91,63 @@ export default function Specials() {
                     fontSize={["2rem", "2.5rem"]}
                     fontWeight={700}
                   >
-                    Birthday packages
+                    Contact
                   </Text>
-
-                  <Text color="#94B973" fontWeight="600" mt="1rem">
-                    $350 for entire backroom
+                  <Text mt={{ sm: 3, md: 3, lg: 5 }} color="#94B973">
+                    Fill up the form below to contact
                   </Text>
-                  <Text>
-                    You get the entire backroom for 3 hours of game time for
-                    your party!
-                  </Text>
-                  <Text color="#94B973" fontWeight="600" mt="1rem">
-                    $550 basic package
-                  </Text>
-                  <Text>
-                    Have the entire backroom to yourselves and get pizza and
-                    soda for the whole party! For ten people, each additional
-                    person is +$30
-                  </Text>
-                  <Text color="#94B973" fontWeight="600" mt="1rem">
-                    $700 premium package
-                  </Text>
-                  <Text>
-                    Have the entire backroom to yourselves with pizza, soda,
-                    unlimited bubble tea, unlimited appetizers and each
-                    participant gets a Sip & Play goodie bag! For ten people,
-                    each additional person is +$45
-                  </Text>
-                  <Text color="#94B973" fontWeight="600" mt="1rem">
-                    For any other large party inquiries, do fill out the form!
-                  </Text>
+                  <Box py={{ base: 5, sm: 5, md: 8, lg: 10 }}>
+                    <VStack pl={0} spacing={3} alignItems="flex-start">
+                      <Button
+                        size="md"
+                        height="48px"
+                        width="fit-content"
+                        variant="ghost"
+                        color="#94B973"
+                        as="a"
+                        pl="0"
+                        href={"tel:718-971-1684"}
+                        _hover={{ border: "2px solid #1C6FEB" }}
+                        leftIcon={<MdPhone color="#94B973" size="20px" />}
+                      >
+                        +1-718-971-1684
+                      </Button>
+                      <Button
+                        size="md"
+                        height="48px"
+                        width="fit-content"
+                        variant="ghost"
+                        color="#94B973"
+                        as="a"
+                        pl="0"
+                        href={"mailto:sipnplaynyc@gmail.com"}
+                        _hover={{ border: "2px solid #1C6FEB" }}
+                        leftIcon={<MdEmail color="#94B973" size="20px" />}
+                      >
+                        sipnplaynyc@gmail.com
+                      </Button>
+                      <Button
+                        size="md"
+                        height="48px"
+                        width="fit-content"
+                        pl="0"
+                        variant="ghost"
+                        color="#94B973"
+                        _hover={{ border: "2px solid #1C6FEB" }}
+                        as="a"
+                        href="https://www.google.com/maps/dir//471+5th+Ave,+Brooklyn,+NY+11215/@40.6680993,-74.0693463,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x89c25b963c296a77:0x33cab105836ef465!2m2!1d-73.9869454!2d40.6681286?entry=ttu"
+                        target="_blank"
+                        leftIcon={<MdLocationOn color="#94B973" size="20px" />}
+                      >
+                        471 5th Ave. Brooklyn, NY 11215
+                      </Button>
+                    </VStack>
+                  </Box>
                 </Box>
               </Box>
-              {/* Right column */}
               <Box w="100%" minW={["auto", "350px"]}>
                 <Box bg="white" borderRadius="6px" w="100%" p="1rem">
                   <Box m={[2, 8]} color="#0B0E3F">
-                    {/* Form */}
                     <VStack spacing={5}>
                       <FormControl id="name">
                         <FormLabel>Your Name</FormLabel>

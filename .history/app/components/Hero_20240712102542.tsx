@@ -26,7 +26,6 @@ const upDownAnimation = keyframes`
   }
 `;
 
-// Generate bubbles for the background
 const bubbles = new Array(20).fill(0).map((_, index) => ({
   id: index,
   size: Math.random() * 3 + 1,
@@ -67,10 +66,8 @@ const Hero: React.FC<HeroProps> = ({ headline, anchor, sub, submenu }) => {
           >
             {headline}
           </Text>
-          {/* Display hours everywhere */}
           <CurrentDayHours />
           {sub && <Text>{sub}</Text>}
-          {/* Moving arrow */}
           <Box
             as="a"
             bg="rgba(246, 232, 234, 0.5)"
@@ -83,7 +80,6 @@ const Hero: React.FC<HeroProps> = ({ headline, anchor, sub, submenu }) => {
             <ArrowDownIcon color="#243E36" fontSize="1.5rem" />
           </Box>
         </Box>
-        {/* Bubbles section */}
         <Box
           position="absolute"
           overflow="hidden"

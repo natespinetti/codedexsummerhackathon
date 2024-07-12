@@ -29,7 +29,6 @@ const bubbleAnimation = keyframes`
   }
 `;
 
-// Generate bubbles for the background
 const bubbles = new Array(20).fill(0).map((_, index) => ({
   id: index,
   size: Math.random() * 3 + 1,
@@ -37,7 +36,6 @@ const bubbles = new Array(20).fill(0).map((_, index) => ({
   animationDuration: Math.random() * 20 + 10,
   animationDelay: Math.random() * 100,
 }));
-
 export default function Specials() {
   return (
     <Container
@@ -53,7 +51,6 @@ export default function Specials() {
       centerContent
       overflow="hidden"
     >
-      {/* Bubbles section */}
       {bubbles.map((bubble, index) => (
         <Box
           key={bubble.id}
@@ -86,7 +83,6 @@ export default function Specials() {
         >
           <Box p={4}>
             <Box display="flex" flexDir={["column", "row"]} gridGap="4rem">
-              {/* Left column */}
               <Box>
                 <Box>
                   <Text
@@ -127,11 +123,9 @@ export default function Specials() {
                   </Text>
                 </Box>
               </Box>
-              {/* Right column */}
               <Box w="100%" minW={["auto", "350px"]}>
                 <Box bg="white" borderRadius="6px" w="100%" p="1rem">
                   <Box m={[2, 8]} color="#0B0E3F">
-                    {/* Form */}
                     <VStack spacing={5}>
                       <FormControl id="name">
                         <FormLabel>Your Name</FormLabel>

@@ -7,7 +7,6 @@ export default function BoardGames() {
   return (
     <>
       <Hero headline={"Board games"} anchor={"board-games"} />
-      {/* Search section container */}
       <Box
         bg="var(--chakra-colors-gray-50)"
         id="board-games"
@@ -36,7 +35,6 @@ export default function BoardGames() {
               Search through the games we have to offer
             </Text>
           </Box>
-          {/* Search box and results */}
           <Search />
         </Box>
       </Box>

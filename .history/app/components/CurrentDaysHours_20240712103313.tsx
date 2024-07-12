@@ -30,7 +30,6 @@ export default function CurrentDayHours() {
       onOpen();
     }
   };
-
   return (
     <Box textAlign="center" fontSize="16px" zIndex="2" overflow="inherit">
       <Popover
@@ -51,7 +50,6 @@ export default function CurrentDayHours() {
               color: linkHoverColor,
             }}
           >
-            {/* This is whats displayed with no interaction */}
             <Box
               display="flex"
               flexDir="row"
@@ -78,7 +76,6 @@ export default function CurrentDayHours() {
           </Box>
         </PopoverTrigger>
 
-        {/* List all business hours in popover */}
         <PopoverContent
           border={0}
           boxShadow={"xl"}

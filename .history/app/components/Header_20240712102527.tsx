@@ -61,12 +61,17 @@ export default function Header() {
             />
           </Flex>
           <Flex flex={{ base: 1 }} justify={{ base: "center", md: "start" }}>
-            {/* Logo left */}
-            <Image
-              maxW="70px"
-              src="/logos/sipnplay2.png"
-              alt="Sip & Play Logo"
-            />
+            <Text
+              textAlign={useBreakpointValue({ base: "center", md: "left" })}
+              fontFamily={"heading"}
+              color={useColorModeValue("gray.800", "white")}
+            >
+              <Image
+                maxW="70px"
+                src="/logos/sipnplay2.png"
+                alt="Sip & Play Logo"
+              />
+            </Text>
 
             <Flex
               display={{ base: "none", md: "flex" }}
@@ -74,7 +79,6 @@ export default function Header() {
               alignItems="center"
               ml="auto"
             >
-              {/* Menu items */}
               <DesktopNav />
             </Flex>
           </Flex>
@@ -85,7 +89,6 @@ export default function Header() {
             direction={"row"}
             spacing={6}
           >
-            {/* CTA */}
             <Button
               as={"a"}
               display={{ base: "none", md: "inline-flex" }}
@@ -103,7 +106,7 @@ export default function Header() {
             </Button>
           </Stack>
         </Flex>
-        {/* Mobile menu items */}
+
         <Collapse in={isOpen} animateOpacity>
           <MobileNav onToggled={onToggle} />
         </Collapse>
@@ -112,7 +115,6 @@ export default function Header() {
   );
 }
 
-// Desktop navigation with hoverable dropdowns
 const DesktopNav = () => {
   const linkColor = useColorModeValue("gray.600", "gray.200");
   const linkHoverColor = useColorModeValue("gray.800", "white");
@@ -171,7 +173,6 @@ const DesktopNav = () => {
   );
 };
 
-// Desktop subnav items (the hovers)
 const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
   return (
     <Box
@@ -210,7 +211,6 @@ const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
   );
 };
 
-// Mobile collapsed menu
 const MobileNav = ({ onToggled }: { onToggled: () => void }) => {
   return (
     <Stack
@@ -242,7 +242,6 @@ const MobileNav = ({ onToggled }: { onToggled: () => void }) => {
   );
 };
 
-// Mobile nav item with collapsible subnav
 const MobileNavItem = ({
   label,
   children,
@@ -317,7 +316,6 @@ interface NavItem {
   href?: string;
 }
 
-// All nav items
 const NAV_ITEMS: Array<NavItem> = [
   {
     label: "Home",

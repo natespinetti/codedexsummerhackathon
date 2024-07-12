@@ -14,7 +14,6 @@ import {
 import { FaInstagram, FaFacebook } from "react-icons/fa";
 import { ReactNode } from "react";
 
-// Social media icon button
 const SocialButton = ({
   children,
   label,
@@ -63,7 +62,6 @@ export default function Footer() {
           justify={["left", "center"]}
           align={["left", "center"]}
         >
-          {/* Logo and cta section */}
           <Box
             display="flex"
             flexDir={["column", "row"]}
@@ -97,7 +95,6 @@ export default function Footer() {
               </Button>
             </Box>
           </Box>
-          {/* Menu items */}
           <Stack direction={["column", "row"]} spacing={6}>
             <Box as="a" href={"/"}>
               Home
@@ -119,7 +116,6 @@ export default function Footer() {
               Gift cards
             </Box>
           </Stack>
-          {/* Contact info */}
           <Box
             display="flex"
             flexDir={["column", "row"]}
@@ -145,7 +141,6 @@ export default function Footer() {
           </Box>
         </Container>
 
-        {/* Copyright/social footer */}
         <Box
           borderTopWidth={1}
           borderStyle={"solid"}

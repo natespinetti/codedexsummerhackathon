@@ -32,7 +32,6 @@ export default function Events() {
               Booster boxes
             </Text>
           </Box>
-          {/* Booster box cards */}
           <Box
             display="flex"
             flexDir={["column", "row"]}
@@ -123,7 +122,6 @@ export default function Events() {
               Upcoming events
             </Text>
           </Box>
-          {/* Discord call out cta */}
           <Box
             w={["100%", "50%"]}
             m="auto"
@@ -153,9 +151,7 @@ export default function Events() {
               Join the Discord
             </Button>
           </Box>
-          {/* Display all events and selectable days */}
           <EventsCalendar />
-          {/* Prizes! */}
           <Box
             p="3.5rem 2rem"
             bg="rgba(255,255,255,0.75)"

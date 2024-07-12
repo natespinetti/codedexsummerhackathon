@@ -1,144 +1,6 @@
 import React, { useState } from "react";
 import { Box, Text, Button, Select } from "@chakra-ui/react";
 
-const daysInMonth = (month: number, year: number) => {
-  return new Date(year, month, 0).getDate();
-};
-
-export default function EventsCalendar() {
-  const [selectedDate, setSelectedDate] = useState<string | null>(null);
-  const [month, setMonth] = useState<number>(7);
-  const [year, setYear] = useState<number>(2024);
-
-  // Clear selected date and events if clicked twice
-  const handleDateClick = (date: string) => {
-    if (date == selectedDate) {
-      setSelectedDate(null);
-    } else {
-      setSelectedDate(date);
-    }
-  };
-
-  // Component to render the events
-  const renderEvents = (date: string | null) => {
-    const filteredEvents = date
-      ? events.filter((event) => event.date === date)
-      : events;
-
-    return filteredEvents.length ? (
-      filteredEvents.map((event, index) => (
-        <Box
-          key={index}
-          borderWidth="1px"
-          borderRadius="lg"
-          p="4"
-          mb="4"
-          bg="rgba(255,255,255,0.2)"
-        >
-          <Text fontSize="lg" fontWeight="bold">
-            {event.title}
-          </Text>
-          <Text>{event.description}</Text>
-        </Box>
-      ))
-    ) : (
-      <Text>No events found for the selected date.</Text>
-    );
-  };
-
-  const numberOfDays = daysInMonth(month, year);
-
-  // When changing value, clear selection
-  const updateMonth = (value: React.SetStateAction<number>) => {
-    setMonth(value);
-    setSelectedDate(null);
-  };
-
-  // When changing value, clear selection
-  const updateYear = (value: React.SetStateAction<number>) => {
-    setYear(value);
-    setSelectedDate(null);
-  };
-
-  return (
-    <Box display="flex" flexDir="column" gridGap="1rem">
-      <Box display="flex" flexDir="row" flexWrap="wrap" gridGap=".5rem">
-        {/* Month and year selections */}
-        <Box display="flex" flexDir="row" gridGap="1rem" w="100%">
-          <Select
-            w="fit-content"
-            value={month}
-            bg="rgba(255,255,255,0.5)"
-            onChange={(e) => updateMonth(Number(e.target.value))}
-          >
-            {Array.from({ length: 12 }, (_, i) => (
-              <option key={i + 1} value={i + 1}>
-                {new Date(0, i).toLocaleString("default", { month: "long" })}
-              </option>
-            ))}
-          </Select>
-          <Select
-            w="fit-content"
-            value={year}
-            bg="rgba(255,255,255,0.5)"
-            onChange={(e) => updateYear(Number(e.target.value))}
-          >
-            {Array.from({ length: 5 }, (_, i) => (
-              <option key={i} value={2024 + i}>
-                {2024 + i}
-              </option>
-            ))}
-          </Select>
-        </Box>
-        {/* Display all day boxes */}
-        {Array.from({ length: numberOfDays }, (_, day) => {
-          const date = `${year}-${String(month).padStart(2, "0")}-${String(
-            day + 1
-          ).padStart(2, "0")}`;
-          const hasEvent = events.find((e) => e.date === date);
-          const isSelected = selectedDate === date;
-          return (
-            <Button
-              key={day}
-              onClick={() => handleDateClick(date)}
-              w="50px"
-              bg={isSelected ? "#94B973" : hasEvent ? "#94B973" : "#F6E8EA"}
-              _hover={{
-                bg: isSelected ? "#B6CFA0" : hasEvent ? "#ACC892" : "#F6E8EA",
-              }}
-              border={isSelected ? "#ED64A6 solid 2px" : "0"}
-              pos="relative"
-              cursor={
-                events.find((e) => e.date == date) ? "pointer" : "not-allowed"
-              }
-              _after={{
-                content: '""',
-                background: events.find((e) => e.date == date)
-                  ? "transparent"
-                  : "#5B0B32",
-                width: "2px",
-                transform: "rotate(45deg)",
-                position: "absolute",
-                height: "100%",
-              }}
-            >
-              {day + 1}
-            </Button>
-          );
-        })}
-      </Box>
-      {/* Display selected events */}
-      <Box w="100%">
-        <Text fontSize="xl" fontWeight="bold" mb="4">
-          {selectedDate ? `Events on ${selectedDate}` : "All Events"}
-        </Text>
-        {renderEvents(selectedDate)}
-      </Box>
-    </Box>
-  );
-}
-
-// Random events to fill a calendar
 const events = [
   {
     date: "2024-01-10",
@@ -388,3 +250,134 @@ const events = [
     description: "Ring in the new year with a special commander event.",
   },
 ];
+
+const daysInMonth = (month: number, year: number) => {
+  return new Date(year, month, 0).getDate();
+};
+
+const EventsCalendar = () => {
+  const [selectedDate, setSelectedDate] = useState<string | null>(null);
+  const [month, setMonth] = useState<number>(7);
+  const [year, setYear] = useState<number>(2024);
+
+  const handleDateClick = (date: string) => {
+    if (date == selectedDate) {
+      setSelectedDate(null);
+    } else {
+      setSelectedDate(date);
+    }
+  };
+
+  const renderEvents = (date: string | null) => {
+    const filteredEvents = date
+      ? events.filter((event) => event.date === date)
+      : events;
+
+    return filteredEvents.length ? (
+      filteredEvents.map((event, index) => (
+        <Box
+          key={index}
+          borderWidth="1px"
+          borderRadius="lg"
+          p="4"
+          mb="4"
+          bg="rgba(255,255,255,0.2)"
+        >
+          <Text fontSize="lg" fontWeight="bold">
+            {event.title}
+          </Text>
+          <Text>{event.description}</Text>
+        </Box>
+      ))
+    ) : (
+      <Text>No events found for the selected date.</Text>
+    );
+  };
+
+  const numberOfDays = daysInMonth(month, year);
+
+  const updateMonth = (value: React.SetStateAction<number>) => {
+    setMonth(value);
+    setSelectedDate(null);
+  };
+  const updateYear = (value: React.SetStateAction<number>) => {
+    setYear(value);
+    setSelectedDate(null);
+  };
+
+  return (
+    <Box display="flex" flexDir="column" gridGap="1rem">
+      <Box display="flex" flexDir="row" flexWrap="wrap" gridGap=".5rem">
+        <Box display="flex" flexDir="row" gridGap="1rem" w="100%">
+          <Select
+            w="fit-content"
+            value={month}
+            bg="rgba(255,255,255,0.5)"
+            onChange={(e) => updateMonth(Number(e.target.value))}
+          >
+            {Array.from({ length: 12 }, (_, i) => (
+              <option key={i + 1} value={i + 1}>
+                {new Date(0, i).toLocaleString("default", { month: "long" })}
+              </option>
+            ))}
+          </Select>
+          <Select
+            w="fit-content"
+            value={year}
+            bg="rgba(255,255,255,0.5)"
+            onChange={(e) => updateYear(Number(e.target.value))}
+          >
+            {Array.from({ length: 5 }, (_, i) => (
+              <option key={i} value={2024 + i}>
+                {2024 + i}
+              </option>
+            ))}
+          </Select>
+        </Box>
+        {Array.from({ length: numberOfDays }, (_, day) => {
+          const date = `${year}-${String(month).padStart(2, "0")}-${String(
+            day + 1
+          ).padStart(2, "0")}`;
+          const hasEvent = events.find((e) => e.date === date);
+          const isSelected = selectedDate === date;
+          return (
+            <Button
+              key={day}
+              onClick={() => handleDateClick(date)}
+              w="50px"
+              bg={isSelected ? "#94B973" : hasEvent ? "#94B973" : "#F6E8EA"}
+              _hover={{
+                bg: isSelected ? "#B6CFA0" : hasEvent ? "#ACC892" : "#F6E8EA",
+              }}
+              border={isSelected ? "#ED64A6 solid 2px" : "0"}
+              pos="relative"
+              cursor={
+                events.find((e) => e.date == date) ? "pointer" : "not-allowed"
+              }
+              _after={{
+                content: '""',
+                background: events.find((e) => e.date == date)
+                  ? "transparent"
+                  : "#5B0B32",
+                width: "2px",
+                transform: "rotate(45deg)",
+                position: "absolute",
+                height: "100%",
+              }}
+            >
+              {day + 1}
+            </Button>
+          );
+        })}
+      </Box>
+      <Box w="100%">
+        <Text fontSize="xl" fontWeight="bold" mb="4">
+          {selectedDate ? `Events on ${selectedDate}` : "All Events"}
+        </Text>
+        {renderEvents(selectedDate)}
+      </Box>
+    </Box>
+  );
+};
+
+export default EventsCalendar;

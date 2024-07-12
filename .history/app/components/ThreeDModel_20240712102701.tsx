@@ -8,7 +8,6 @@ type ModelProps = {
   small?: boolean;
 };
 
-// Display the 3D model
 const Model = ({ path, small }: ModelProps) => {
   const { scene } = useGLTF(path) as unknown as GLTF & ObjectMap;
   {
@@ -18,7 +17,6 @@ const Model = ({ path, small }: ModelProps) => {
   return <primitive object={scene} />;
 };
 
-// Display the 3D model in a canvas with lighting
 const ThreeDModel = ({ path, small }: ModelProps) => {
   return (
     <Canvas

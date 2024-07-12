@@ -781,7 +781,7 @@ export default function Menu() {
           display={["none", "block"]}
         >
           <Box
-            data-speed="0.3"
+            data-speed="0.5"
             position="absolute"
             top="-12%"
             left="0%"

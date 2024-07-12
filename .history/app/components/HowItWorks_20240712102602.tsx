@@ -13,7 +13,6 @@ export default function HowItWorks() {
         position="relative"
       >
         <Box maxW="90%" m="auto" p="3.5rem 0">
-          {/* Headline */}
           <Text
             as="h2"
             fontSize={["2rem", "2.5rem"]}
@@ -32,7 +31,6 @@ export default function HowItWorks() {
             borderLeft={"6px solid #ED64A6"}
             pl="3rem"
           >
-            {/* Step by step section */}
             <Box display="flex">
               <Box display="flex" flexDir="column" w="100%">
                 <Text

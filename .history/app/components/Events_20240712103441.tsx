@@ -5,12 +5,11 @@ const daysInMonth = (month: number, year: number) => {
   return new Date(year, month, 0).getDate();
 };
 
-export default function EventsCalendar() {
+const EventsCalendar = () => {
   const [selectedDate, setSelectedDate] = useState<string | null>(null);
   const [month, setMonth] = useState<number>(7);
   const [year, setYear] = useState<number>(2024);
 
-  // Clear selected date and events if clicked twice
   const handleDateClick = (date: string) => {
     if (date == selectedDate) {
       setSelectedDate(null);
@@ -19,7 +18,6 @@ export default function EventsCalendar() {
     }
   };
 
-  // Component to render the events
   const renderEvents = (date: string | null) => {
     const filteredEvents = date
       ? events.filter((event) => event.date === date)
@@ -48,13 +46,10 @@ export default function EventsCalendar() {
 
   const numberOfDays = daysInMonth(month, year);
 
-  // When changing value, clear selection
   const updateMonth = (value: React.SetStateAction<number>) => {
     setMonth(value);
     setSelectedDate(null);
   };
-
-  // When changing value, clear selection
   const updateYear = (value: React.SetStateAction<number>) => {
     setYear(value);
     setSelectedDate(null);
@@ -63,7 +58,6 @@ export default function EventsCalendar() {
   return (
     <Box display="flex" flexDir="column" gridGap="1rem">
       <Box display="flex" flexDir="row" flexWrap="wrap" gridGap=".5rem">
-        {/* Month and year selections */}
         <Box display="flex" flexDir="row" gridGap="1rem" w="100%">
           <Select
             w="fit-content"
@@ -90,7 +84,6 @@ export default function EventsCalendar() {
             ))}
           </Select>
         </Box>
-        {/* Display all day boxes */}
         {Array.from({ length: numberOfDays }, (_, day) => {
           const date = `${year}-${String(month).padStart(2, "0")}-${String(
             day + 1
@@ -127,7 +120,6 @@ export default function EventsCalendar() {
           );
         })}
       </Box>
-      {/* Display selected events */}
       <Box w="100%">
         <Text fontSize="xl" fontWeight="bold" mb="4">
           {selectedDate ? `Events on ${selectedDate}` : "All Events"}
@@ -136,7 +128,9 @@ export default function EventsCalendar() {
       </Box>
     </Box>
   );
-}
+};
+
+export default EventsCalendar;
 
 // Random events to fill a calendar
 const events = [

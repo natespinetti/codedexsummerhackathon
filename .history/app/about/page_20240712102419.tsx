@@ -7,7 +7,6 @@ export default function About() {
   return (
     <>
       <Hero headline={"About"} anchor={"our-story"} />
-      {/* Side by side cards */}
       <Box
         bg="var(--chakra-colors-gray-50)"
         id="our-story"
@@ -32,8 +31,6 @@ export default function About() {
               Our story
             </Text>
           </Box>
-
-          {/* Our story card */}
           <Box
             display="flex"
             flexDir={["column", "row"]}
@@ -77,8 +74,6 @@ export default function About() {
               </Box>
             </Box>
           </Box>
-
-          {/* Press release card */}
           <Box
             display="flex"
             flexDir={["column", "row"]}
@@ -159,7 +154,6 @@ export default function About() {
           </Box>
         </Box>
       </Box>
-      {/* Contact form */}
       <Contact />
     </>
   );

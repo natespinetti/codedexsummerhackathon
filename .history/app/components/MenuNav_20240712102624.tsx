@@ -3,7 +3,6 @@ import { Box, Menu, MenuButton, MenuItem, MenuList } from "@chakra-ui/react";
 import { Button } from "@chakra-ui/react";
 import { ChevronDownIcon } from "@chakra-ui/icons";
 
-// For easier exploration on menu page
 export default function MenuNav() {
   return (
     <Box pos="fixed" zIndex={2} w="100%">

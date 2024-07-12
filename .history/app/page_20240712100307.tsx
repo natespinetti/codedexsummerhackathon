@@ -158,8 +158,8 @@ export default function Home() {
                 </Text>
                 <Text mb="1rem">
                   We&apos;re hosting a Lorcana learn to play event on July 22nd
-                  6pm! Just grab a starter deck at Sip & Play and we&apos;ll
-                  have players on hand to teach you.
+                  6pm! Just grab a starter deck at Sip & Play and we'll have
+                  players on hand to teach you.
                 </Text>
                 <Text mb="1rem">Excited to see you there!</Text>
               </Box>

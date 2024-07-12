@@ -110,14 +110,14 @@ export default function About() {
                   mb="1rem"
                   color="#243E36"
                 >
-                  What other&apos;s have to say
+                  What other's have to say
                 </Text>
                 <Text mb="1rem">
-                  The coffee shop-turned-gamer&apos;s-paradise will let
-                  customers rent out time to play board games while sipping on
-                  drinks and snacking on its menu. Gamers can choose from the
-                  cafe&apos;s library of 200 board games — which owner Jonathan
-                  Li says is still growing — or bring their own games from home.
+                  The coffee shop-turned-gamer's-paradise will let customers
+                  rent out time to play board games while sipping on drinks and
+                  snacking on its menu. Gamers can choose from the cafe's
+                  library of 200 board games — which owner Jonathan Li says is
+                  still growing — or bring their own games from home.
                 </Text>
                 <Box display="flex" flexDir="row" gridGap="1rem">
                   <Button

@@ -182,7 +182,7 @@ export default function Menu() {
                     <Text>
                       $4.50(H)
                       <br />
-                      S&apos;mores: $5.50
+                      S'mores: $5.50
                     </Text>
                   </Box>
                   <Box mb="1rem">
@@ -674,8 +674,8 @@ export default function Menu() {
                     </Text>
                     <Text>Medium: $5.25 Large: $6.25</Text>
                     <Text as="i">
-                      Made with real bourbon and definitely the drink we&apos;re
-                      most excited for this fall.
+                      Made with real bourbon and definitely the drink we're most
+                      excited for this fall.
                     </Text>
                   </Box>
                   <Box mb="1rem">
@@ -693,7 +693,7 @@ export default function Menu() {
                     </Text>
                     <Text as="i">
                       Check out our beer and wine at the front of our store!
-                      We&apos;re constantly rotating out product from local
+                      We're constantly rotating out product from local
                       breweries!
                     </Text>
                   </Box>
@@ -764,7 +764,7 @@ export default function Menu() {
                     <Text>Finback</Text>
                   </Box>
                   <Box mb="1rem">
-                    <Text>Three&apos;s Brewery</Text>
+                    <Text>Three's Brewery</Text>
                   </Box>
                 </Box>
               </Box>

@@ -1,0 +1,37 @@
+html {
+  scroll-behavior: smooth;
+}
+.ais-SearchBox {
+  margin-bottom: 1em;
+}
+
+.ais-InstantSearch {
+  max-width: 960px;
+  width: 100%;
+  display: block;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.ais-Hits-list .ais-Hits-item {
+  margin-left: 0;
+  width: 100%;
+  border-width: 1px;
+  border-radius: 6px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0;
+}
+
+.ais-Hits-item img {
+  margin-right: 1em;
+}
+
+.ais-InstantSearch .ais-Hits-list {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1em;
+  margin-left: 0;
+  margin-top: 0;
+}

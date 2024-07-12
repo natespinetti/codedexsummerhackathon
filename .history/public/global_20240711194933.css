@@ -1,0 +1,48 @@
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+.container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.rotating-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-style: preserve-3d;
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s ease-out;
+}
+
+.step {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  font-size: 2rem;
+  color: #fff;
+}
+
+.step:nth-child(1) {
+  transform: rotateY(0deg) translateZ(300px);
+}
+.step:nth-child(2) {
+  transform: rotateY(90deg) translateZ(300px);
+}
+.step:nth-child(3) {
+  transform: rotateY(180deg) translateZ(300px);
+}
+.step:nth-child(4) {
+  transform: rotateY(270deg) translateZ(300px);
+}
